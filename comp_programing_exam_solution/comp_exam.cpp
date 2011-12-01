@@ -1,10 +1,22 @@
+/*
+  Computer Exam Solultion
+  Greggory Rothmeier
+  greggroth@gmail.com
+  
+
+  This is a bomb-proof solution to the take-home exam.  Much of the code is 
+  dedicated to verifying that appropiate input is given.  I've added 
+  comments to aid in understanding.  In order to campure the difference in 
+  values between the exact and series solutions, I'm using a library which 
+  allows for quadruple-double precision (~64 decimal digits) available at 
+  (http://crd.lbl.gov/~dhbailey/mpdist/qd-2.3.12.tar.gz).
+*/
+
 #include <iostream>
 #include <string>
 #include <math.h>
 #include <stdlib.h>
 #include <sstream>
-// Using a high-precision library (~64 decimals of precision) to capture the difference between
-// the series and real solutions (http://crd.lbl.gov/~dhbailey/mpdist/qd-2.3.12.tar.gz)
 #include <qd/qd_real.h>
 
 using namespace std;
@@ -58,7 +70,7 @@ int main (void) {
   
   // Get and verify a valid n
   while (1) {
-    cout << "N (must be an integer greater than 0):  ";
+    cout << "N (must be an integer >= 0):  ";
     getline(cin, inN);
     
     // Makes sure it's an integer
@@ -72,7 +84,7 @@ int main (void) {
     
     // Criticize the user if they don't read the instructions
     if (intN < 0) {
-      cout << "It's not that hard.  Just enter a number larger than 0." << endl;
+      cout << "It's not that hard.  Just enter a number larger than 0 or equal to 0." << endl;
       continue;
     }
     
