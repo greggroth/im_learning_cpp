@@ -1,0 +1,8 @@
+fpu.o fpu.o: fpu.cpp ../config.h ../include/qd/fpu.h \
+  ../include/qd/qd_config.h
+
+../config.h:
+
+../include/qd/fpu.h:
+
+../include/qd/qd_config.h:
