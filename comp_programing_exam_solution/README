@@ -1,0 +1,3 @@
+This is my solution to the c++ computer programing exam.  It requires the qd library included in /qd-2.3.12.
+
+Compile using: c++ comp_exam.cpp -o comp_exam.out -l qd
