@@ -21,23 +21,16 @@
 
 using namespace std;
 
-bool checkForDouble(string s) {
+bool isDouble(string s) {
   istringstream ss(s);
   double d;
   return (ss >> d) && (ss >> std::ws).eof();
 }
 
-bool checkForInteger(string s) {
-  bool isValid = true;
-  for (unsigned int nInd = 0; nInd < s.length(); nInd++) {
-    if (!isdigit(s[nInd])) {
-      isValid = false;
-      break;
-    }
-    if (!isValid)
-      continue;
-  }
-  return isValid;
+bool isInteger(string s) {
+  istringstream ss(s);
+  int d;
+  return (ss >> d) && (ss >> std::ws).eof();
 }
 
 int main (void) {
@@ -51,7 +44,7 @@ int main (void) {
     getline(cin, inS);
     
     // Make sure the string is a number
-    if (!checkForDouble(inS)) {
+    if (!isDouble(inS)) {
       cout << "I need a number for this to work.  Try again." << endl;
       continue;
     }
@@ -74,7 +67,7 @@ int main (void) {
     getline(cin, inN);
     
     // Makes sure it's an integer
-    if (!checkForInteger(inN)) {
+    if (!isInteger(inN)) {
       cout << "I need an integer for this to work.  Keep trying." << endl;
       continue;
     }
